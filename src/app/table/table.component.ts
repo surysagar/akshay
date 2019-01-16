@@ -5,25 +5,42 @@ import { Table } from './Table';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styles: []
+  styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
   employees: Table[];
 
   settings = {
-    selectMode: 'multi',
+    //selectMode: 'multi',
+    hideSubHeader: true,  
+    actions: false,
     columns: {
-      id: {
-        title: 'ID'
+      file_nam: {
+        title: 'File name'
       },
-      name: {
-        title: 'Name'
+      source_hub_id: {
+        title: 'SRC HUB'
       },
-      city: {
-        title: 'City'
+      owning_hub_id: {
+        title: 'Owning Hub'
       },
-      employeeId: {
-        title: 'Employee No.'
+      bulk_id: {
+        title: 'Bulk Id.'
+      },
+      endpt_id: {
+        title: 'Endpoint'
+      },
+      // xfer_strt_ts: {
+      //   title: 'Location'
+      // },
+      // tm_retry_cnt: {
+      //   title: 'Retry/ Count'
+      // },
+      // xfer_rqst_ts: {
+      //   title: 'User'
+      // },
+      stat_msg_txt: {
+        title: 'Status'
       }
     }
   };
@@ -33,6 +50,7 @@ export class TableComponent implements OnInit {
   ngOnInit() {
     this.tservice.getData().subscribe((data: Table[]) => {
       this.employees = data;
+      console.log(data);
     });
   }
 }

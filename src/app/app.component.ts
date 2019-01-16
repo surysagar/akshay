@@ -8,5 +8,5 @@ import { TableComponent } from './table/table.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'smart-table-example';
+  title = 'Display Status[Read-only]';
 }
