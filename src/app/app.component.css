@@ -1,50 +1,215 @@
-/* Add a black background color to the top navigation */
-.topnav {
+:host body {
+  font-family: 'Open Sans', sans-serif;
+}/* Add a black background color to the top navigation */
+
+
+:host ::ng-deep .topnav {
     background-color: #333;
     overflow: hidden;
     border-bottom:1px solid gray;
   }
 
-  .topnav-title {
+  :host ::ng-deep .topnav-title {
       color:white;
     background-color: #333;
     overflow: hidden;
     text-align: center;
     padding-bottom: 10px;
+    height:88px;
   }
 
-  .topnav-title * {
+  :host ::ng-deep .topnav-title * {
       margin-right:10px;
-      height:24px;
+      
       padding:0px;
+      margin:0px;
+      vertical-align: top;
   }
 
  
   
   /* Style the links inside the navigation bar */
-  .topnav a {
+  :host ::ng-deep .topnav a {
     float: left;
     display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+    text-decoration: none;  
     font-size: 17px;
   }
   
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
+
   /* Add an active class to highlight the current page */
-  .active {
-    background-color: #2b7096;
-    color: white;
-  }
+
   
   /* Hide the link that should open and close the topnav on small screens */
-  .topnav .icon {
+  /* :host ::ng-deep .topnav .icon {
     display: none;
-  }
+  } */
+
+
+:host ::ng-deep .centerbox {
+ text-align:center;
+ margin-top:10px!important;
+}
+
+
+/* Reset Select */
+:host ::ng-deep select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background:white;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+  background-image: none;
+}
+/* Custom Select */
+:host ::ng-deep .selectbox {
+  position: relative;
+  display: inline-block;
+  width: 20em;
+  height: 34px!important;
+  line-height: 34px;
+  background:white;
+  overflow: hidden;
+  border-radius: .25em;
+}
+:host ::ng-deep select {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 .5em!important;
+  color: #000;
+  cursor: pointer;
+}
+:host ::ng-deep select::-ms-expand {
+  display: none;
+}
+/* Arrow */
+:host ::ng-deep .selectbox::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
+  width: 44px;
+  height: 40px;
+  background:#828282;
+  pointer-events: none;
+}
+/* Transition */
+:host ::ng-deep .selectbox:hover::after {
+  color: #444;
+}
+:host ::ng-deep .selectbox::after {
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+
+:host ::ng-deep .datecl {
+  display:inline-block;
+  margin-right:10px;
+}
+
+:host ::ng-deep [type="date"] {
+  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+:host ::ng-deep [type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+:host ::ng-deep [type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+:host ::ng-deep [type="date"].dateclass{
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 3px 5px;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+  width: 190px;
+}
+
+/* Styles go here */
+
+:host ::ng-deep .heading{
+  margin-top:200px;
+}
+/*----------------------------------- Navigation starts ---------------------------------------*/
+.openDrawer{
+    padding:1%;
+    color: #000;
+    position: fixed;
+    margin: 2%;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.navigation{
+    width: 20%;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    background-color: #000;
+    z-index: 3;
+}
+
+.close-nav{
+    float: right;
+    font-size: 2em;
+    margin: 3%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.navigation ul{
+    padding: 10%;
+    margin-right: 10%;
+    list-style-type: none;
+    height: 100%;
+}
+
+.navigation li{
+    height: 5%;
+    width: 100%;
+    margin-bottom: 10%;
+    padding: 5%;
+    border-bottom: solid 0.5px rgba(255, 255, 255, 0.11);
+    cursor: pointer;
+    color: #fff;
+}
+
+.navigation li:hover{
+    border-left: solid 5px rgb(167, 167, 167);
+    border-bottom: 0px;
+    color: rgb(167, 167, 167);
+}
+/*----------------------------------- Navigation ends ---------------------------------------*/
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s; 
+}
+.resource-provider{
+  text-align:center;
+  font-weight:800;
+}
+
+:host ::ng-deep table .ng-star-inserted {
+  font-size:11px;
+}

@@ -1,37 +1,22 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
-<div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Display The Status</a>
-  <a href="#news">File Retrigger</a>
-  <a href="#contact">Update the Status</a>
-  <a href="#about">Manager Actions</a>
-  <a href="#about">Logs</a>
-  <a href="#about" style='float:right'>Logout</a>
-  <a href="#about" style='float:right'>Logged</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
+<div class="openDrawer fa fa-bars"  (click)="navigationDrawer()">
+    <span class="glyphicon glyphicon-menu-hamburger"></span>
 </div>
-
-<div class="topnav-title">
-  <h2>
-    {{ title }}
-  </h2>
-  <div>
-    <input type="date">
-    <select>
-      <option value="volvo">All</option>
-      <option value="volvo">IDN to WNG</option>
-      <option value="saab">WNG to IDN</option>
-      <option value="mercedes"></option>
-      <option value="audi"></option>
-    </select>
-  </div>
+    
+    <div class="overlay" [@showOverlay]="showOverlay"></div>
+    
+    <div class="navigation" [@navigation]="navigation" >
+    	<div class="close-nav fa fa-times-circle-o" (click)="navigationDrawer()">
+    		<span class="glyphicon glyphicon-menu-left"></span>
+    	</div>
+    	<ul (click)="navigationDrawer()">
+    		<li><a [routerLink]="['/']">Display the status</a></li>
+    		<li><a [routerLink]="['/file_retrigger']">File Retrigger</a></li>
+    		<li><a [routerLink]="['/file_retrigger']">Update file status</a></li>
+    		<li><a [routerLink]="['/file_retrigger']">Manager actions</a></li>
+    		<li><a [routerLink]="['/file_retrigger']">Logs</a></li>
+    	</ul>
+    </div>
+<router-outlet></router-outlet>
+<div class="page container">
+    
 </div>
-
-
-
-<div style="text-align:center">
-  
-</div>
-<app-table></app-table>

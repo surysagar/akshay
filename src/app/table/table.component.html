@@ -1,2 +1,37 @@
-
-    <ng2-smart-table [settings]="settings" [source]="employees"></ng2-smart-table>
+<div class="page container">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="topnav-title">
+                <h4>
+                    {{ title }}
+                </h4>
+                
+                <div class="centerbox clearfix">
+                    <span class="clearfix">
+                        <span class="datecl">
+                            <input type="date" name="date" class="dateclass">
+                        </span>
+                        <span class="selectbox">
+                            <select>
+                                    <option value="volvo">All</option>
+                                    <option value="volvo">IDN to WNG</option>
+                                    <option value="saab">WNG to IDN</option>
+                                    <option value="mercedes"></option>
+                                    <option value="audi"></option>
+                            </select>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div style="text-align:right; background:gray;" class="form-control">
+                    <input #search class="search" type="text" placeholder="Search..." (keydown.enter)="onSearch(search.value)">
+                </div>
+                <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+            </div>
+        </div>
+    </div>    
+    
+    
+    
+    
+    
