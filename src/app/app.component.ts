@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-
+//import {jsFileObject}  from '../assets/practice';
 import { TableComponent } from './table/table.component';
 import {trigger,state,style,animate,transition,keyframes} from '@angular/animations';
-
+//declare const practice: any;
+//import * as abdc  from 'abc';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,7 +24,11 @@ import {trigger,state,style,animate,transition,keyframes} from '@angular/animati
   ]
 })
 export class AppComponent {
-  
+
+  constructor() {
+    // var a = new practice();
+    // console.log(a);
+  }
   navigation:boolean = true;
   showOverlay:boolean = false;
   navigationDrawer(){

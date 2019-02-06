@@ -2,7 +2,7 @@
     <span class="glyphicon glyphicon-menu-hamburger"></span>
 </div>
     
-    <div class="overlay" [@showOverlay]="showOverlay"></div>
+    <!-- <div class="overlay" [@showOverlay]="showOverlay"></div> -->
     
     <div class="navigation" [@navigation]="navigation" >
     	<div class="close-nav fa fa-times-circle-o" (click)="navigationDrawer()">
@@ -16,7 +16,7 @@
     		<li><a [routerLink]="['/file_retrigger']">Logs</a></li>
     	</ul>
     </div>
-<router-outlet></router-outlet>
-<div class="page container">
-    
-</div>
+<router-outlet>
+	
+</router-outlet>
+

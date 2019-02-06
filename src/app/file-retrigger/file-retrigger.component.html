@@ -1,3 +1,41 @@
-<p>
-  file-retrigger works!
-</p>
+<div class="page container">
+  <div class="row">
+      <div class="col-md-12">
+      <div class="topnav-title">
+          <h5>
+              {{ title }}
+          </h5>
+          
+          <div class="centerbox clearfix">
+              <span class="clearfix">
+                  <span class="datecl">
+                      <input type="date" name="date" class="dateclass">
+                  </span>
+                  <span class="selectbox">
+                      <select>
+                              <option value="volvo">All</option>
+                              <option value="volvo">IDN to WNG</option>
+                              <option value="saab">WNG to IDN</option>
+                              <option value="mercedes"></option>
+                              <option value="audi"></option>
+                      </select>
+                  </span>
+              </span>
+          </div>
+      </div>
+    <div style="text-align:right; background:gray;" class="form-control">
+        <input #search class="search" type="text" placeholder="Search..." (keydown.enter)="onSearch(search.value)">
+    </div>
+    <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+    <div class="clearfix" style="position:relative">
+        <button class="btn-primary"
+        style="margin-right:6px;
+            position:absolute;top:6px; left:0px;">
+            <i class="fa fa-share-square-o">
+        </i>Execute Selected
+        </button>
+    </div>
+    
+    </div>
+  </div>
+</div> 
